@@ -1,4 +1,4 @@
-form{
+form {
   padding: 50px;
   background: #ffffff;
   box-shadow: 3px 3px 10px #00000020;
@@ -15,12 +15,13 @@ form{
     margin: 0 0 30px;
   }
 
-  .address, .inputGroup {
+  .address,
+  .inputGroup {
     margin: 0 0 15px;
     border-radius: 12px;
 
     @media (min-width: 600px) {
-    border-radius: 5px;
+      border-radius: 5px;
     }
   }
 
@@ -34,7 +35,7 @@ form{
     }
   }
 
-  button[type="submit"]{
+  button[type="submit"] {
     font-family: inherit;
     display: block;
     margin: 30px auto 0;
@@ -52,7 +53,7 @@ form{
       font-size: 1.05rem;
     }
 
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
 
@@ -66,15 +67,15 @@ form{
     }
   }
 
-  .inputGroup{
+  .inputGroup {
     flex: 1;
 
-    &>label{
+    &>label {
       display: block;
       padding: 0 0 4px;
     }
 
-    &>input{
+    &>input {
       min-height: 48px;
       border-radius: 12px;
       border: 1px solid;
@@ -110,7 +111,7 @@ form{
       font-size: 1.05rem;
     }
 
-    &--is-focused{
+    &--is-focused {
       outline: #3581E5 auto 1px !important;
       border-color: transparent;
     }
@@ -137,7 +138,7 @@ form{
       border-radius: 12px;
     }
 
-    &__button{
+    &__button {
       width: 48px;
       height: 48px;
       display: flex;
@@ -155,7 +156,7 @@ form{
         border-radius: 5px;
       }
 
-      &__button{
+      &__button {
         width: 36px;
         height: 36px;
 
@@ -177,7 +178,7 @@ form{
         font-size: 1.05rem;
       }
 
-      input{
+      input {
         letter-spacing: inherit;
         text-align: center;
 
@@ -187,7 +188,8 @@ form{
         }
       }
 
-      &__day, &__month {
+      &__day,
+      &__month {
         width: 28px !important;
       }
 
