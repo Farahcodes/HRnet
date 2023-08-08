@@ -17,7 +17,8 @@
     "react-select": "^5.7.4",
     "redux-persist": "^6.0.0",
     "sass": "^1.64.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yet-another-react-modal-component": "^1.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
