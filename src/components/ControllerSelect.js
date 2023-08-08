@@ -17,6 +17,7 @@ const ControllerSelect = (props) => {
             (option) => option.value === field.value
           )}
           inputId={props.inputId}
+          classNamePrefix="select"
         />
       )}
     />
