@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
 import Modal, { openModal } from 'yet-another-react-modal-component';
 import { optionsStates, optionsDepartment } from '../formData';
+import './FormEmployee.scss';
 
 const FormEmployee = () => {
   const { register, handleSubmit, control } = useForm();
