@@ -1,14 +1,15 @@
 import { useForm } from 'react-hook-form';
 import { useRef } from 'react';
-import ControllerDatePicker from './ControllerDatePicker';
-import ControllerSelect from './ControllerSelect';
 import { useDispatch } from 'react-redux';
-import { add } from '../store';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
 import Modal, { openModal } from 'yet-another-react-modal-component';
+
+import ControllerDatePicker from './ControllerDatePicker';
+import ControllerSelect from './ControllerSelect';
 import { optionsStates, optionsDepartment } from '../formData';
 import './FormEmployee.scss';
+import { add } from '../store';
 
 const FormEmployee = () => {
   const { register, handleSubmit, control } = useForm();
