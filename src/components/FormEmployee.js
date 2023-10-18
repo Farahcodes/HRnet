@@ -29,8 +29,22 @@ const FormEmployee = () => {
   const dateOfBirth = useRef(null),
     startDate = useRef(null);
 
+  /**
+   * `saveEmployee`
+   *
+   * Asynchronously handles form submissions, where `data` is the form data.
+   *
+   * 1. Parses date fields into ISO string format
+   * 2. Creates an employee object with a generated UUID
+   * 3. Dispatches a Redux action to add the new employee data to the state
+   * 4. Triggers a success modal once the employee data is saved
+   *
+   * @param {Object} data - Form data
+   */
+
   const saveEmployee = async (data) => {
     let dateOfBirthParsed, startDateParsed;
+    // Parsing date fields while considering timezone offset
     dateOfBirthParsed = (await data.dateOfBirth)
       ? new Date(
           data.dateOfBirth?.getTime() -
@@ -47,13 +61,17 @@ const FormEmployee = () => {
           ?.toISOString()
           .substring(0, 10)
       : undefined;
+
+    // Constructing employee data with parsed dates and a generated UUID
     const dataParsed = {
       ...data,
       dateOfBirth: dateOfBirthParsed,
       startDate: startDateParsed,
       id: uuidv4(),
     };
+    // Dispatching action to add employee data to Redux state
     dispatch(add(dataParsed));
+    // Opening success modal upon saving employee data
     openModal('#successModal');
   };
 
