@@ -75,12 +75,22 @@ const FormEmployee = () => {
     openModal('#successModal');
   };
 
+  /**
+   * `DatePickerFocusByRef`
+   *
+   * Helper function that focuses on a date input field in a date picker component using its ref.
+   *
+   * @param {Object} ref - React ref object pointing to an input element
+   */
   const DatePickerFocusByRef = (ref) => {
+    // Query selector to focus on day input of date picker
     ref.current.wrapper.querySelector('[name=day]').focus();
   };
 
+  // Rendering form with fields, using previously defined components and methods
   return (
     <>
+      {/* Handling form submission with `handleSubmit` which will validate inputs and call `saveEmployee` */}
       <form onSubmit={handleSubmit(saveEmployee)}>
         <h2>Create Employee</h2>
         <div className="inputRow">
@@ -180,8 +190,12 @@ const FormEmployee = () => {
 
         <button type="submit">Save</button>
       </form>
+
+      {/* Success modal that shows upon successful employee creation */}
       <Modal id="successModal">
         <h2>Employee Created!</h2>
+
+        {/* Navigation link to view current employees */}
         <Link to="employees" className="link">
           View Current Employees
         </Link>
