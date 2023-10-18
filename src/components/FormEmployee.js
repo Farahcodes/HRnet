@@ -11,9 +11,21 @@ import { optionsStates, optionsDepartment } from '../formData';
 import './FormEmployee.scss';
 import { add } from '../store';
 
+/**
+ * `FormEmployee` Component
+ *
+ * This component manages the creation of a new employee, with a form to fill out details
+ * like name, date of birth, start date, address, and department.
+ *
+ * Uses `react-hook-form` for form handling, `redux` for state management, and `react-router-dom` for navigation.
+ */
+
 const FormEmployee = () => {
+  //  `useForm` to manage form state and submissions
   const { register, handleSubmit, control } = useForm();
+  // `useDispatch` to dispatch Redux actions
   const dispatch = useDispatch();
+  // `useRef` creates mutable object which holds `.current` property and does not cause re-render when the object is changed
   const dateOfBirth = useRef(null),
     startDate = useRef(null);
 
