@@ -1,3 +1,4 @@
+// Array containing US states and territories with their full names and abbreviations.
 const states = [
     { name: 'Alabama', abbreviation: 'AL' },
     { name: 'Alaska', abbreviation: 'AK' },
@@ -59,6 +60,7 @@ const states = [
     { name: 'Wisconsin', abbreviation: 'WI' },
     { name: 'Wyoming', abbreviation: 'WY' },
   ],
+  // Array containing possible departments for an organization.
   department = [
     'Sales',
     'Marketing',
@@ -66,13 +68,22 @@ const states = [
     'Human Resources',
     'Legal',
   ],
+  /**
+   * Convert the states array to a format suitable for dropdown or select UI components.
+   * Each item will have 'value' (state abbreviation) and 'label' (full state name).
+   */
   optionsStates = states.map((item) => ({
     value: item.abbreviation,
     label: item.name,
   })),
+  /**
+   * Convert the department array to a format suitable for dropdown or select UI components.
+   * Each item will have 'value' (department name) and 'label' (department name).
+   */
   optionsDepartment = department.map((item) => ({
     value: item,
     label: item,
   }));
 
+// Export constants for external use.
 export { states, department, optionsStates, optionsDepartment };
