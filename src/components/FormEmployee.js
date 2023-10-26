@@ -1,9 +1,10 @@
 import { useForm } from 'react-hook-form';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
-import Modal, { openModal } from 'yet-another-react-modal-component';
+// import Modal, { openModal } from 'yet-another-react-modal-component';
+import Modal from '@farahcodes/reactmodal';
 
 import ControllerDatePicker from './ControllerDatePicker';
 import ControllerSelect from './ControllerSelect';
@@ -28,6 +29,8 @@ const FormEmployee = () => {
   // `useRef` creates mutable object which holds `.current` property and does not cause re-render when the object is changed
   const dateOfBirth = useRef(null),
     startDate = useRef(null);
+
+  const [isModalVisible, setModalVisible] = useState(false);
 
   /**
    * `saveEmployee`
@@ -72,7 +75,7 @@ const FormEmployee = () => {
     // Dispatching action to add employee data to Redux state
     dispatch(add(dataParsed));
     // Opening success modal upon saving employee data
-    openModal('#successModal');
+    setModalVisible(true);
   };
 
   /**
@@ -192,7 +195,11 @@ const FormEmployee = () => {
       </form>
 
       {/* Success modal that shows upon successful employee creation */}
-      <Modal id="successModal">
+      <Modal
+        id="successModal"
+        isVisible={isModalVisible}
+        onClose={() => setModalVisible(false)}
+      >
         <h2>Employee Created!</h2>
 
         {/* Navigation link to view current employees */}
