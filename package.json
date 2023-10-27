@@ -12,6 +12,7 @@
     "@testing-library/react": "^13.0.1",
     "@testing-library/user-event": "^13.5.0",
     "compress-create-react-app": "^1.2.1",
+    "farah-component-modal": "^1.0.4",
     "react": "^18.0.0",
     "react-date-picker": "^8.4.0",
     "react-dom": "^18.0.0",
