@@ -3,8 +3,7 @@ import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
-// import Modal, { openModal } from 'yet-another-react-modal-component';
-import Modal from '@farahcodes/reactmodal';
+import { Modal } from 'farah-component-modal';
 
 import ControllerDatePicker from './ControllerDatePicker';
 import ControllerSelect from './ControllerSelect';
@@ -30,7 +29,7 @@ const FormEmployee = () => {
   const dateOfBirth = useRef(null),
     startDate = useRef(null);
 
-  const [isModalVisible, setModalVisible] = useState(false);
+  const [show, setShow] = useState(false);
 
   /**
    * `saveEmployee`
@@ -75,7 +74,7 @@ const FormEmployee = () => {
     // Dispatching action to add employee data to Redux state
     dispatch(add(dataParsed));
     // Opening success modal upon saving employee data
-    setModalVisible(true);
+    setShow(true);
   };
 
   /**
@@ -197,8 +196,8 @@ const FormEmployee = () => {
       {/* Success modal that shows upon successful employee creation */}
       <Modal
         id="successModal"
-        isVisible={isModalVisible}
-        onClose={() => setModalVisible(false)}
+        show={show}
+        onClose={() => setShow(false)}
       >
         <h2>Employee Created!</h2>
 
